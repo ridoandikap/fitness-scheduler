@@ -40,7 +40,7 @@ const WORKOUT_DATA = {
     { id: 'd4-2', title: 'Lying Leg Curl Machine', stats: '4 sets x 12-15 reps x 13.6 kg', category: 'Legs', image: '/exercises/exercise_leg_curl.png' },
     { id: 'd4-3', title: 'Underhand Grip Lat Pulldown', stats: '3 sets x 10-12 reps x 18.1 kg', category: 'Back', image: '/exercises/exercise_lat_pulldown.png' },
     { id: 'd4-4', title: 'Seated DB Overhead Press', stats: '3 sets x 10-12 reps x 3.4 kg', category: 'Shoulders', image: '/exercises/exercise_seated_press.png' },
-    { id: 'd4-5', title: 'Abduction Machine', stats: '3 sets x 10-12 reps x 31.7 kg', category: 'Glutes', image: '/exercises/exercise_hip_thrust.png' },
+    { id: 'd4-5', title: 'Abduction Machine', stats: '3 sets x 10-12 reps x 31.7 kg', category: 'Glutes', image: '/exercises/exercise_squat.png' },
     { id: 'd4-6', title: 'Lying Leg Raise', stats: '3 sets x 8 reps', category: 'Core', superset: true, image: '/exercises/exercise_leg_raise.png' },
   ]
 };

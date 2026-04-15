@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 
 const WORKOUT_DATA = {
-  1: [
+  "1": [
     { id: 'd1-1', title: 'Seated DB Overhead Press', stats: '4 sets x 10-12 reps x 3.4 kg', category: 'Shoulders' },
     { id: 'd1-2', title: 'Wide Grip Lat Pulldown', stats: '4 sets x 10-12 reps x 20 kg', category: 'Back' },
     { id: 'd1-3', title: 'Dumbbell Hip Thrust', stats: '3 sets x 10-12 reps x 10.2 kg', category: 'Glutes' },
@@ -19,7 +19,7 @@ const WORKOUT_DATA = {
     { id: 'd1-5', title: 'Roman Chair Side Bend', stats: '3 sets x 10-12 reps x 3.4 kg', category: 'Core' },
     { id: 'd1-6', title: 'Dumbbell Upright Row', stats: '3 sets x 12-15 reps x 4.5 kg', category: 'Shoulders', superset: true },
   ],
-  2: [
+  "2": [
     { id: 'd2-1', title: 'Machine Supported Pull Ups', stats: '4 sets x 8-10 reps x 40.8 kg', category: 'Back' },
     { id: 'd2-2', title: 'Push Up', stats: '4 sets x 3 reps', category: 'Chest' },
     { id: 'd2-3', title: 'Hip Thrust Machine', stats: '3 sets x 12-15 reps x 18.1 kg', category: 'Glutes' },
@@ -27,7 +27,7 @@ const WORKOUT_DATA = {
     { id: 'd2-5', title: 'Seated Cable Russian Twist', stats: '3 sets x 8-10 reps x 4.5 kg', category: 'Core' },
     { id: 'd2-6', title: 'Standing DB Lateral Raise', stats: '3 sets x 12-15 reps x 2.2 kg', category: 'Shoulders', superset: true },
   ],
-  3: [
+  "3": [
     { id: 'd3-1', title: 'Floor Back Extension', stats: '3 sets x 10 reps', category: 'Lower Back' },
     { id: 'd3-2', title: 'Leg Press Selector Machine', stats: '3 sets x 10-12 reps x 40 kg', category: 'Legs' },
     { id: 'd3-3', title: 'Incline Barbell Bench Press', stats: '3 sets x 8-10 reps x 22.6 kg', category: 'Chest' },
@@ -35,7 +35,7 @@ const WORKOUT_DATA = {
     { id: 'd3-5', title: 'V Sit Ups', stats: '4 sets x 10 reps', category: 'Core' },
     { id: 'd3-6', title: 'Standing Cable Hip Extension', stats: '4 sets x 15-20 reps x 4.5 kg', category: 'Glutes', superset: true },
   ],
-  4: [
+  "4": [
     { id: 'd4-1', title: 'Goblet Squat', stats: '4 sets x 8-10 reps x 9 kg', category: 'Legs' },
     { id: 'd4-2', title: 'Lying Leg Curl Machine', stats: '4 sets x 12-15 reps x 13.6 kg', category: 'Legs' },
     { id: 'd4-3', title: 'Underhand Grip Lat Pulldown', stats: '3 sets x 10-12 reps x 18.1 kg', category: 'Back' },
@@ -46,7 +46,7 @@ const WORKOUT_DATA = {
 };
 
 function App() {
-  const [selectedDay, setSelectedDay] = useState(1);
+  const [selectedDay, setSelectedDay] = useState("1");
   const [progress, setProgress] = useState({});
 
   // Load progress from localStorage
@@ -111,14 +111,17 @@ function App() {
 
       {/* Day Tabs */}
       <div className="tabs">
-        {[1, 2, 3, 4].map(num => (
-          <div 
+        {["1", "2", "3", "4"].map(num => (
+          <button 
             key={num}
             className={`tab ${selectedDay === num ? 'active' : ''}`}
-            onClick={() => setSelectedDay(num)}
+            onClick={() => {
+              console.log("Switching to Day ", num);
+              setSelectedDay(num);
+            }}
           >
             Day {num}
-          </div>
+          </button>
         ))}
       </div>
 

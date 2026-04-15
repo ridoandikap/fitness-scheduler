@@ -12,36 +12,36 @@ import {
 
 const WORKOUT_DATA = {
   "1": [
-    { id: 'd1-1', title: 'Seated DB Overhead Press', stats: '4 sets x 10-12 reps x 3.4 kg', category: 'Shoulders' },
-    { id: 'd1-2', title: 'Wide Grip Lat Pulldown', stats: '4 sets x 10-12 reps x 20 kg', category: 'Back' },
-    { id: 'd1-3', title: 'Dumbbell Hip Thrust', stats: '3 sets x 10-12 reps x 10.2 kg', category: 'Glutes' },
-    { id: 'd1-4', title: 'Smith Machine Lunge', stats: '3 sets x 8-10 reps x 11.3 kg', category: 'Legs' },
-    { id: 'd1-5', title: 'Roman Chair Side Bend', stats: '3 sets x 10-12 reps x 3.4 kg', category: 'Core' },
-    { id: 'd1-6', title: 'Dumbbell Upright Row', stats: '3 sets x 12-15 reps x 4.5 kg', category: 'Shoulders', superset: true },
+    { id: 'd1-1', title: 'Seated DB Overhead Press', stats: '4 sets x 10-12 reps x 3.4 kg', category: 'Shoulders', image: '/exercises/exercise_seated_press.png' },
+    { id: 'd1-2', title: 'Wide Grip Lat Pulldown', stats: '4 sets x 10-12 reps x 20 kg', category: 'Back', image: '/exercises/exercise_lat_pulldown.png' },
+    { id: 'd1-3', title: 'Dumbbell Hip Thrust', stats: '3 sets x 10-12 reps x 10.2 kg', category: 'Glutes', image: '/exercises/exercise_hip_thrust.png' },
+    { id: 'd1-4', title: 'Smith Machine Lunge', stats: '3 sets x 8-10 reps x 11.3 kg', category: 'Legs', image: '/exercises/exercise_lunge.png' },
+    { id: 'd1-5', title: 'Roman Chair Side Bend', stats: '3 sets x 10-12 reps x 3.4 kg', category: 'Core', image: '/exercises/exercise_back_extension.png' },
+    { id: 'd1-6', title: 'Dumbbell Upright Row', stats: '3 sets x 12-15 reps x 4.5 kg', category: 'Shoulders', superset: true, image: '/exercises/exercise_lateral_raise.png' },
   ],
   "2": [
-    { id: 'd2-1', title: 'Machine Supported Pull Ups', stats: '4 sets x 8-10 reps x 40.8 kg', category: 'Back' },
-    { id: 'd2-2', title: 'Push Up', stats: '4 sets x 3 reps', category: 'Chest' },
-    { id: 'd2-3', title: 'Hip Thrust Machine', stats: '3 sets x 12-15 reps x 18.1 kg', category: 'Glutes' },
-    { id: 'd2-4', title: 'Dumbbell Lunge', stats: '3 sets x 8-10 reps x 4.5 kg', category: 'Legs' },
-    { id: 'd2-5', title: 'Seated Cable Russian Twist', stats: '3 sets x 8-10 reps x 4.5 kg', category: 'Core' },
-    { id: 'd2-6', title: 'Standing DB Lateral Raise', stats: '3 sets x 12-15 reps x 2.2 kg', category: 'Shoulders', superset: true },
+    { id: 'd2-1', title: 'Machine Supported Pull Ups', stats: '4 sets x 8-10 reps x 40.8 kg', category: 'Back', image: '/exercises/exercise_pullups.png' },
+    { id: 'd2-2', title: 'Push Up', stats: '4 sets x 3 reps', category: 'Chest', image: '/exercises/exercise_pushup.png' },
+    { id: 'd2-3', title: 'Hip Thrust Machine', stats: '3 sets x 12-15 reps x 18.1 kg', category: 'Glutes', image: '/exercises/exercise_hip_thrust.png' },
+    { id: 'd2-4', title: 'Dumbbell Lunge', stats: '3 sets x 8-10 reps x 4.5 kg', category: 'Legs', image: '/exercises/exercise_lunge.png' },
+    { id: 'd2-5', title: 'Seated Cable Russian Twist', stats: '3 sets x 8-10 reps x 4.5 kg', category: 'Core', image: '/exercises/exercise_russian_twist.png' },
+    { id: 'd2-6', title: 'Standing DB Lateral Raise', stats: '3 sets x 12-15 reps x 2.2 kg', category: 'Shoulders', superset: true, image: '/exercises/exercise_lateral_raise.png' },
   ],
   "3": [
-    { id: 'd3-1', title: 'Floor Back Extension', stats: '3 sets x 10 reps', category: 'Lower Back' },
-    { id: 'd3-2', title: 'Leg Press Selector Machine', stats: '3 sets x 10-12 reps x 40 kg', category: 'Legs' },
-    { id: 'd3-3', title: 'Incline Barbell Bench Press', stats: '3 sets x 8-10 reps x 22.6 kg', category: 'Chest' },
-    { id: 'd3-4', title: 'Neutral Grip Lat Pulldown', stats: '3 sets x 10-12 reps x 22.6 kg', category: 'Back' },
-    { id: 'd3-5', title: 'V Sit Ups', stats: '4 sets x 10 reps', category: 'Core' },
-    { id: 'd3-6', title: 'Standing Cable Hip Extension', stats: '4 sets x 15-20 reps x 4.5 kg', category: 'Glutes', superset: true },
+    { id: 'd3-1', title: 'Floor Back Extension', stats: '3 sets x 10 reps', category: 'Lower Back', image: '/exercises/exercise_back_extension.png' },
+    { id: 'd3-2', title: 'Leg Press Selector Machine', stats: '3 sets x 10-12 reps x 40 kg', category: 'Legs', image: '/exercises/exercise_leg_press.png' },
+    { id: 'd3-3', title: 'Incline Barbell Bench Press', stats: '3 sets x 8-10 reps x 22.6 kg', category: 'Chest', image: '/exercises/exercise_bench_press.png' },
+    { id: 'd3-4', title: 'Neutral Grip Lat Pulldown', stats: '3 sets x 10-12 reps x 22.6 kg', category: 'Back', image: '/exercises/exercise_lat_pulldown.png' },
+    { id: 'd3-5', title: 'V Sit Ups', stats: '4 sets x 10 reps', category: 'Core', image: '/exercises/exercise_situps.png' },
+    { id: 'd3-6', title: 'Standing Cable Hip Extension', stats: '4 sets x 15-20 reps x 4.5 kg', category: 'Glutes', superset: true, image: '/exercises/exercise_hip_thrust.png' },
   ],
   "4": [
-    { id: 'd4-1', title: 'Goblet Squat', stats: '4 sets x 8-10 reps x 9 kg', category: 'Legs' },
-    { id: 'd4-2', title: 'Lying Leg Curl Machine', stats: '4 sets x 12-15 reps x 13.6 kg', category: 'Legs' },
-    { id: 'd4-3', title: 'Underhand Grip Lat Pulldown', stats: '3 sets x 10-12 reps x 18.1 kg', category: 'Back' },
-    { id: 'd4-4', title: 'Seated DB Overhead Press', stats: '3 sets x 10-12 reps x 3.4 kg', category: 'Shoulders' },
-    { id: 'd4-5', title: 'Abduction Machine', stats: '3 sets x 10-12 reps x 31.7 kg', category: 'Glutes' },
-    { id: 'd4-6', title: 'Lying Leg Raise', stats: '3 sets x 8 reps', category: 'Core', superset: true },
+    { id: 'd4-1', title: 'Goblet Squat', stats: '4 sets x 8-10 reps x 9 kg', category: 'Legs', image: '/exercises/exercise_squat.png' },
+    { id: 'd4-2', title: 'Lying Leg Curl Machine', stats: '4 sets x 12-15 reps x 13.6 kg', category: 'Legs', image: '/exercises/exercise_leg_curl.png' },
+    { id: 'd4-3', title: 'Underhand Grip Lat Pulldown', stats: '3 sets x 10-12 reps x 18.1 kg', category: 'Back', image: '/exercises/exercise_lat_pulldown.png' },
+    { id: 'd4-4', title: 'Seated DB Overhead Press', stats: '3 sets x 10-12 reps x 3.4 kg', category: 'Shoulders', image: '/exercises/exercise_seated_press.png' },
+    { id: 'd4-5', title: 'Abduction Machine', stats: '3 sets x 10-12 reps x 31.7 kg', category: 'Glutes', image: '/exercises/exercise_hip_thrust.png' },
+    { id: 'd4-6', title: 'Lying Leg Raise', stats: '3 sets x 8 reps', category: 'Core', superset: true, image: '/exercises/exercise_leg_raise.png' },
   ]
 };
 
@@ -140,10 +140,12 @@ function App() {
               onClick={() => toggleExercise(ex.id)}
             >
               <div className="workout-image">
-                <img src="/hero.png" alt={ex.title} style={{ opacity: 0.1 }} />
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Zap size={24} color={progress[ex.id] ? 'var(--success)' : 'var(--text-dim)'} />
-                </div>
+                <img src={ex.image || "/hero.png"} alt={ex.title} style={{ opacity: ex.image ? 1 : 0.1, objectFit: 'cover' }} />
+                {!ex.image && (
+                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Zap size={24} color={progress[ex.id] ? 'var(--success)' : 'var(--text-dim)'} />
+                  </div>
+                )}
               </div>
               <div className="workout-details">
                 <h3>{ex.title}</h3>

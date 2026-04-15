@@ -74,22 +74,26 @@ body {
 .tabs {
   display: flex;
   background: var(--card-bg);
-  border-radius: 12px;
-  padding: 4px;
+  border-radius: 14px;
+  padding: 6px;
   margin-bottom: 24px;
   border: 1px solid var(--border);
+  position: relative;
+  z-index: 50;
 }
 
 .tab {
   flex: 1;
   text-align: center;
-  padding: 10px;
-  border-radius: 8px;
+  padding: 14px 10px; /* Padding lebih besar untuk iPhone */
+  border-radius: 10px;
   font-weight: 700;
   font-size: 14px;
   color: var(--text-dim);
   cursor: pointer;
   transition: all 0.2s;
+  user-select: none;
+  z-index: 10;
 }
 
 .tab.active {

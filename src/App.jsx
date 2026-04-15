@@ -88,7 +88,7 @@ function App() {
       </header>
 
       {/* Progress Ring Area */}
-      <div className="progress-ring-container">
+      <div className="progress-ring-container" style={{ pointerEvents: 'none' }}>
         <svg width="180" height="180">
           <circle cx="90" cy="90" r="80" stroke="var(--border)" strokeWidth="12" fill="none" />
           <motion.circle 
@@ -103,7 +103,7 @@ function App() {
             strokeLinecap="round"
           />
         </svg>
-        <div className="progress-info">
+        <div className="progress-info" style={{ pointerEvents: 'auto' }}>
           <h2>{percentComplete}%</h2>
           <p className="text-dim">Completed</p>
         </div>

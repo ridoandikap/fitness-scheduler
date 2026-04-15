@@ -1,21 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 
 :root {
-  --bg-color: #050505;
-  --card-bg: rgba(255, 255, 255, 0.03);
-  --border-color: rgba(255, 255, 255, 0.08);
-  --accent-blue: #3b82f6;
-  --accent-purple: #8b5cf6;
-  --text-main: #ffffff;
-  --text-dim: rgba(255, 255, 255, 0.6);
-  --glass-blur: blur(12px);
+  --bg-color: #0F1115;
+  --card-bg: #1C1F26;
+  --accent: #FF8C00; /* Fitness22 Orange */
+  --text-main: #FFFFFF;
+  --text-dim: #8E9196;
+  --border: #2A2E37;
+  --success: #2ECC71;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -23,135 +22,206 @@ body {
   background: var(--bg-color);
   color: var(--text-main);
   min-height: 100vh;
-  overflow-x: hidden;
-  background-image: 
-    radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 100% 100%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+  padding-bottom: 90px;
 }
 
 .app-container {
   max-width: 450px;
   margin: 0 auto;
-  min-height: 100vh;
-  padding: 20px;
-  padding-bottom: 100px;
+  padding: 24px 20px;
 }
 
-.glass-card {
-  background: var(--card-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--border-color);
-  border-radius: 24px;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.h1 {
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  margin-bottom: 8px;
-}
-
-.h2 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 16px;
-}
-
-.text-dim {
-  color: var(--text-dim);
-  font-size: 14px;
-}
-
-.day-selector {
-  display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  padding-bottom: 10px;
+/* Header & Progress */
+.header {
   margin-bottom: 24px;
-  scrollbar-width: none;
 }
 
-.day-selector::-webkit-scrollbar {
-  display: none;
+.day-label {
+  color: var(--accent);
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 12px;
+  margin-bottom: 4px;
 }
 
-.day-item {
-  min-width: 60px;
-  height: 80px;
+.title {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+/* Circular Progress Mock */
+.progress-ring-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 20px 0 32px;
+  position: relative;
+}
+
+.progress-info {
+  position: absolute;
+  text-align: center;
+}
+
+.progress-info h2 {
+  font-size: 36px;
+  font-weight: 900;
+}
+
+/* Day Selector */
+.tabs {
+  display: flex;
   background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
-  transition: all 0.3s ease;
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text-dim);
   cursor: pointer;
+  transition: all 0.2s;
 }
 
-.day-item.active {
-  background: var(--accent-blue);
-  border-color: var(--accent-blue);
-  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
+.tab.active {
+  background: var(--accent);
+  color: white;
 }
 
-.workout-item {
+/* Workout Cards */
+.workout-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  padding: 16px;
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 16px;
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 20px;
-  margin-bottom: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s;
 }
 
-.exercise-icon {
-  width: 48px;
-  height: 48px;
-  background: rgba(59, 130, 246, 0.1);
+.workout-card.completed {
+  border-color: var(--success);
+  opacity: 0.8;
+}
+
+.workout-image {
+  width: 70px;
+  height: 70px;
+  background: white;
   border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.workout-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.workout-details {
+  flex: 1;
+}
+
+.workout-details h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.workout-stats {
+  font-size: 13px;
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+.superset-badge {
+  background: rgba(255, 140, 0, 0.1);
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+
+/* Checklist Button */
+.check-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 2px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent-blue);
-}
-
-.bottom-nav {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 40px);
-  max-width: 410px;
-  background: rgba(10, 10, 10, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border-color);
-  border-radius: 30px;
-  height: 70px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  z-index: 100;
-}
-
-.nav-item {
-  color: var(--text-dim);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
   cursor: pointer;
 }
 
-.nav-item.active {
-  color: var(--accent-blue);
+.check-btn.active {
+  background: var(--success);
+  border-color: var(--success);
 }
 
-.add-btn:hover {
-  background: rgba(59, 130, 246, 0.2) !important;
+/* Bottom Nav */
+.footer-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: #000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid var(--border);
+}
+
+.nav-link {
+  color: var(--text-dim);
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-link.active {
+  color: var(--accent);
+}
+
+.start-btn {
+  background: var(--accent);
+  color: white;
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 900;
+  font-size: 18px;
+  margin-top: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+}
+
+/* Custom Scrollbar for tabs if needed */
+.tabs {
+  scrollbar-width: none;
+}
+.tabs::-webkit-scrollbar {
+  display: none;
 }
